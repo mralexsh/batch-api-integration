@@ -1,3 +1,3 @@
 # batch-api-integration
 This project is a proof of concept for very common integration task. Suppose we have an API wich handles varaity of entities. Let's say we have an organization and each organization has  employees. The issue is that we don't want to apply those CRUD operations one by one. Instead we want to design a single JSON schema which contains complex information about integration content. It could contains a collection of organizations (and each organization could contains a collection of emploees), some meta information etc. So we can call this project "a proxy API" that get some complex JSON, transform it some how and call a particular API to get the job done.
-![simple schema](https://github.com/mralexsh/batch-api-integration/blob/main/batch-api-integration.png?raw=true)
+![simple schema](https://github.com/mralexsh/batch-api-integration/main/blob/batch-api-integration.png?raw=true)
