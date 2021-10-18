@@ -1,0 +1,9 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="outputRoute">
+        <from uri="direct:output"/>
+        <log message="+++++++++++++++++++++++"/>
+        <log message="${body}"/>
+        <log message="+++++++++++++++++++++++"/>
+        <to uri="stub:nowhere"/>
+    </route>
+</routes>

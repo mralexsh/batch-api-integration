@@ -1,0 +1,14 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="actionRoute">
+        <from uri="direct:action"/>
+        <onException>
+            <exception>com.fasterxml.jackson.databind.JsonMappingException</exception>
+            <handled>
+                <simple>true</simple>
+            </handled>
+            <log message="Error unmarshalling payload ${exception.message}" loggingLevel="ERROR"/>
+        </onException>
+
+        <to uri="direct:output"/>
+    </route>
+</routes>

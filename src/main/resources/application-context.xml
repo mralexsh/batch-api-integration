@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                    http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	   http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring-3.2.0.xsd
+	   ">
+    <bean id="propertiesParser" class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:application.properties</value>
+                <!--<value>file:${configuration.location.folder}/rest.properties</value>
+                <value>file:${configuration.location.folder}/db.properties</value>
+                <value>file:${configuration.location.folder}/oauth.properties</value>
+                <value>file:${secret.location.folder}/db.properties</value>-->
+            </list>
+        </property>
+    </bean>
 
-    <!--<import resource="spring/spring-resources.xml"/>-->
+    <bean id="apiInfo" class="com.integration.batch.dto.ApiInfo"/>
+    <!--<camelContext xmlns="http://camel.apache.org/schema/spring" trace="true" streamCache="true" >
+
+        <dataFormats>
+            <json id="json" prettyPrint="true" unmarshalTypeName="java.util.LinkedHashMap" />
+        </dataFormats>
+
+    </camelContext>-->
 </beans>

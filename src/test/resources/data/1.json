@@ -1,0 +1,33 @@
+{
+  "action": "list",
+  "organizations": [
+    {
+      "name": "org1",
+      "address": "addr1",
+      "employees": [
+        {
+          "name": "Ivanov",
+          "jobPosition": "worker"
+        },
+        {
+          "name": "Petrov",
+          "jobPosition": "manager"
+        }
+      ]
+    },
+    {
+      "name": "org2",
+      "address": "addr2",
+      "employees": [
+        {
+          "name": "Sidorov",
+          "jobPosition": "accounter"
+        },
+        {
+          "name": "Michailov",
+          "jobPosition": "CEO"
+        }
+      ]
+    }
+  ]
+}

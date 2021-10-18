@@ -1,0 +1,7 @@
+<rests xmlns="http://camel.apache.org/schema/spring">
+    <rest>
+        <post uri="/action" type="com.integration.batch.dto.Payload" consumes="application/json">
+            <to uri="direct:action"/>
+        </post>
+    </rest>
+</rests>

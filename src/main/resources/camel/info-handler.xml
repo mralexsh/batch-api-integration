@@ -1,0 +1,12 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="infoHandlerRoute">
+        <from uri="direct:info"/>
+        <log message="=============================" />
+        <log message="${body}" />
+        <log message="=============================" />
+        <setBody>
+           <spel>#{@apiInfo}</spel>
+        </setBody>
+        <to uri="direct:output"/>
+    </route>
+</routes>
